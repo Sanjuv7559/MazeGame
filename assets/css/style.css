@@ -1,0 +1,58 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    background: url('../images/bg.jpg') no-repeat center/cover;
+}
+.container {
+    position: relative;
+    width: 600px;
+    height: 600px;
+}
+.image {
+    width: 100%;
+    height: 100%;
+    background: url('../images/face.jpg') no-repeat center/cover;
+}
+.maze {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* Reduced to 5 columns */
+    grid-template-rows: repeat(8, 1fr); /* Reduced to 5 rows */
+}
+.maze div {
+    background: #000;
+    border: 1px solid #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px; /* Number size */
+    color: white;
+    font-weight: bold;
+}
+#clearButton {
+    position: absolute;
+    right: 20px; /* Adjust the distance from the right */
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+#clearButton:hover {
+    background-color: #0056b3;
+}
