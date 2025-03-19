@@ -1,3 +1,4 @@
+/* Responsive Full-Screen Centering */
 body {
     display: flex;
     justify-content: center;
@@ -6,17 +7,26 @@ body {
     background-color: #f0f0f0;
     margin: 0;
     background: url('../images/bg.jpg') no-repeat center/cover;
+    flex-direction: column; /* Stack elements vertically */
 }
+
+/* Responsive Game Container */
 .container {
     position: relative;
-    width: 600px;
-    height: 600px;
+    width: 90vw; /* Adjust width dynamically */
+    max-width: 600px;
+    height: 90vw;
+    max-height: 600px;
 }
+
+/* Background Image */
 .image {
     width: 100%;
     height: 100%;
     background: url('../images/face.jpg') no-repeat center/cover;
 }
+
+/* Maze Grid */
 .maze {
     position: absolute;
     top: 0;
@@ -24,9 +34,11 @@ body {
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(8, 1fr); /* Reduced to 5 columns */
-    grid-template-rows: repeat(8, 1fr); /* Reduced to 5 rows */
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
 }
+
+/* Maze Squares */
 .maze div {
     background: #000;
     border: 1px solid #fff;
@@ -34,16 +46,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px; /* Number size */
+    font-size: 20px;
     color: white;
     font-weight: bold;
+    transition: opacity 0.3s ease;
 }
+
+/* Clear All Button */
 #clearButton {
-    position: absolute;
-    right: 20px; /* Adjust the distance from the right */
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 10px 20px;
+    margin-top: 20px;
+    padding: 12px 25px;
     font-size: 16px;
     font-weight: bold;
     border: none;
@@ -53,6 +65,28 @@ body {
     border-radius: 5px;
     transition: 0.3s;
 }
+
+/* Hover Effect */
 #clearButton:hover {
     background-color: #0056b3;
+}
+
+/* Responsive Button Placement */
+@media (min-width: 768px) { /* For tablets & desktops */
+    body {
+        flex-direction: row; /* Side-by-side layout */
+    }
+
+    .container {
+        width: 600px;
+        height: 600px;
+    }
+
+    #clearButton {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-top: 0; /* Remove extra space */
+    }
 }
